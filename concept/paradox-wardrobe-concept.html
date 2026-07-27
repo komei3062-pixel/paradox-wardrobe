@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>PARADOX WARDROBE — Concept Book</title>
+<style>
+@font-face { font-family:'IPAGothic'; src: local('IPAGothic'); }
+</style>
+<link rel="stylesheet" href="fonts-local.css">
+<style>
+:root{
+  --ink:#17140f;
+  --ink-soft:#2a251d;
+  --bone:#ece4d3;
+  --bone-dim:#d9cfb8;
+  --red:#8c3b2c;
+  --amber:#c69a46;
+  --green:#454f3a;
+  --grey:#8a8377;
+  --line-on-dark: rgba(236,228,211,0.28);
+  --line-on-light: rgba(23,20,15,0.22);
+  --serif: 'Noto Serif JP', 'IPAGothic', serif;
+  --display: 'Cinzel', 'Noto Serif JP', serif;
+  --accent: 'Cormorant Garamond', 'Noto Serif JP', serif;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+html,body{ width:210mm; }
+body{
+  font-family: var(--serif);
+  color: var(--ink);
+  background: var(--bone);
+  -webkit-font-smoothing:antialiased;
+}
+@page{ size:210mm 297mm; margin:0; }
+
+.page{
+  position:relative;
+  width:210mm;
+  height:297mm;
+  overflow:hidden;
+  break-after:page;
+  page-break-after:always;
+}
+.page:last-child{ break-after:auto; page-break-after:auto; }
+
+.dark{ background: var(--ink); color: var(--bone); }
+.light{ background: var(--bone); color: var(--ink); }
+
+.frame{
+  position:absolute; inset:9mm;
+  border:0.6pt solid var(--line-on-dark);
+  pointer-events:none;
+}
+.light .frame{ border-color: var(--line-on-light); }
+
+.eyebrow{
+  font-family: var(--display);
+  letter-spacing:.32em;
+  font-size:8.4pt;
+  text-transform:uppercase;
+  opacity:.72;
+}
+.pagenum{
+  position:absolute; bottom:12mm; right:14mm;
+  font-family: var(--display);
+  font-size:7.6pt; letter-spacing:.25em; opacity:.55;
+}
+.pagenum.left{ right:auto; left:14mm; }
+
+/* ---------- COVER ---------- */
+.cover{ display:flex; flex-direction:column; justify-content:space-between; padding:16mm 15mm; }
+.cover .top-row{ display:flex; justify-content:space-between; align-items:flex-start; }
+.cover .top-row .tag{ font-family:var(--display); font-size:8pt; letter-spacing:.34em; opacity:.75; }
+.cover .signal{ display:flex; gap:6mm; align-items:center; }
+.dot{ width:5.2mm; height:5.2mm; border-radius:50%; }
+.dot.red{ background:var(--red); }
+.dot.amber{ background:var(--amber); }
+.dot.green{ background:var(--green); }
+
+.cover .center{ flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:8mm; }
+.brand-jp{ font-family: var(--serif); font-weight:700; font-size:19mm; line-height:1.04; letter-spacing:.06em; }
+.brand-en{ font-family: var(--display); font-size:11.5pt; letter-spacing:.62em; padding-left:.62em; opacity:.92; }
+.cover .rule{ width:26mm; height:0.6pt; background:var(--line-on-dark); }
+.cover .kuchi{ font-family: var(--accent); font-style:italic; font-size:13.5pt; letter-spacing:.05em; opacity:.88; max-width:120mm; line-height:1.9; }
+
+.cover .bottom-row{ display:flex; justify-content:space-between; align-items:flex-end; font-size:8pt; letter-spacing:.12em; opacity:.75; }
+.cover .bottom-row .col{ display:flex; flex-direction:column; gap:1.6mm; }
+.cover .bottom-row .num{ font-family:var(--display); letter-spacing:.3em; }
+
+/* ---------- STATEMENT PAGE ---------- */
+.statement{ padding:20mm 20mm 18mm; display:flex; flex-direction:column; box-sizing:border-box; }
+.statement .head{ display:flex; justify-content:space-between; align-items:baseline; }
+.statement .title-jp{ font-size:14pt; font-weight:700; letter-spacing:.16em; margin-top:10mm; }
+.statement .pull{
+  font-family: var(--accent); font-style:italic; font-size:30pt; line-height:1.5;
+  margin:12mm 0 10mm; letter-spacing:.02em;
+}
+.statement .pull b{ font-weight:600; color:var(--red); font-style:normal; font-family:var(--serif); }
+.statement .body{ font-size:10pt; line-height:2.05; max-width:150mm; letter-spacing:.02em; }
+.statement .body p{ margin-bottom:4.2mm; }
+.statement .foot-mark{ margin-top:auto; display:flex; justify-content:space-between; align-items:flex-end; }
+.statement .foot-mark .signature{ font-family:var(--display); font-size:8pt; letter-spacing:.3em; opacity:.6;}
+
+/* ---------- FOUR PILLARS ---------- */
+.pillars{ padding:16mm 14mm 14mm; display:flex; flex-direction:column; box-sizing:border-box; }
+.pillars .head{ padding:0 1mm; }
+.pillars .title-en{ font-family:var(--display); font-size:9pt; letter-spacing:.3em; margin-bottom:2mm;}
+.pillars .title-jp{ font-size:15pt; font-weight:700; letter-spacing:.1em; }
+.grid2{ flex:1; display:grid; grid-template-columns:1fr 1fr; grid-template-rows:1fr 1fr; gap:0.6mm; margin-top:8mm; }
+.pillar{ border:0.6pt solid var(--line-on-light); padding:9mm; display:flex; flex-direction:column; position:relative; }
+.pillar .no{ font-family:var(--display); font-size:8pt; letter-spacing:.25em; opacity:.55; }
+.pillar .mark{ margin:5mm 0 4mm; height:13mm; display:flex; align-items:center; }
+.pillar h3{ font-size:12pt; letter-spacing:.08em; margin-bottom:1mm; }
+.pillar .sub{ font-family:var(--accent); font-style:italic; font-size:9.5pt; opacity:.62; margin-bottom:4mm; }
+.pillar p{ font-size:8.4pt; line-height:1.95; opacity:.92; }
+.pillar.red-acc{ border-top:1.6pt solid var(--red); }
+.pillar.amber-acc{ border-top:1.6pt solid var(--amber); }
+.pillar.green-acc{ border-top:1.6pt solid var(--green); }
+.pillar.ink-acc{ border-top:1.6pt solid var(--ink); }
+
+/* ---------- SILHOUETTE PAGES ---------- */
+.looks{ padding:15mm 13mm 14mm; display:flex; flex-direction:column; box-sizing:border-box; }
+.looks .head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:4mm; }
+.looks .title-jp{ font-size:13pt; font-weight:700; letter-spacing:.12em; }
+.lookrow{ flex:1; display:grid; grid-template-columns:1fr 1fr; gap:4mm; }
+.lookcard{ border:0.6pt solid var(--line-on-light); display:flex; flex-direction:column; }
+.lookcard .figwrap{ flex:1; display:flex; align-items:center; justify-content:center; background:
+    repeating-linear-gradient(0deg, transparent, transparent 7.5mm, var(--line-on-light) 7.5mm, var(--line-on-light) 7.6mm);
+}
+.lookcard svg{ width:56%; height:92%; }
+.lookcard .info{ border-top:0.6pt solid var(--line-on-light); padding:5mm 6mm 6mm; }
+.lookcard .lookno{ font-family:var(--display); font-size:7.6pt; letter-spacing:.28em; opacity:.55; }
+.lookcard .lookname{ font-size:10.6pt; font-weight:700; margin:1.6mm 0 1mm; letter-spacing:.03em; }
+.lookcard .looknameen{ font-family:var(--accent); font-style:italic; font-size:9pt; opacity:.6; margin-bottom:2.6mm;}
+.lookcard .lookdesc{ font-size:7.8pt; line-height:1.85; opacity:.9; }
+.lookcard .tags{ margin-top:3mm; display:flex; gap:2.4mm; flex-wrap:wrap; }
+.tagchip{ font-size:6.6pt; letter-spacing:.08em; border:0.5pt solid var(--line-on-light); padding:1.1mm 2.4mm; border-radius:8px; opacity:.85;}
+
+/* ---------- MATERIALS ---------- */
+.materials{ padding:16mm 14mm 14mm; display:flex; flex-direction:column; box-sizing:border-box; }
+.materials .title-jp{ font-size:14pt; font-weight:700; letter-spacing:.1em; margin-bottom:2mm;}
+.materials .lede{ font-size:8.6pt; line-height:1.9; max-width:150mm; opacity:.85; margin-bottom:8mm; }
+.mtable{ width:100%; border-collapse:collapse; font-size:8.2pt; }
+.mtable th{ text-align:left; font-family:var(--display); font-size:6.8pt; letter-spacing:.18em; text-transform:uppercase; opacity:.62; padding:2.4mm 3mm; border-bottom:0.8pt solid var(--ink); }
+.mtable td{ padding:4mm 3mm; border-bottom:0.5pt solid var(--line-on-light); vertical-align:top; }
+.mtable tr:last-child td{ border-bottom:0.8pt solid var(--ink); }
+.swatch{ width:9mm; height:9mm; border:0.5pt solid var(--line-on-light); flex:none; }
+.mname{ font-weight:700; font-size:9pt; margin-bottom:.8mm; }
+.mnameen{ font-family:var(--accent); font-style:italic; font-size:8pt; opacity:.6; }
+.mrow-flex{ display:flex; gap:4mm; align-items:flex-start; }
+.mcomp{ font-family:var(--display); font-size:7.6pt; letter-spacing:.06em; opacity:.75; white-space:nowrap; }
+
+/* ---------- COLOR PALETTE ---------- */
+.palette{ padding:16mm 14mm 14mm; display:flex; flex-direction:column; box-sizing:border-box; }
+.palette .title-jp{ font-size:14pt; font-weight:700; letter-spacing:.1em; margin-bottom:8mm;}
+.pal-grid{ flex:1; display:grid; grid-template-columns:repeat(3,1fr); gap:4mm; }
+.pal-card{ display:flex; flex-direction:column; border:0.6pt solid var(--line-on-dark); }
+.pal-swatch{ flex:1; }
+.pal-info{ padding:5mm 5mm 6mm; background:var(--ink); }
+.pal-name{ font-size:10pt; font-weight:700; letter-spacing:.05em; }
+.pal-nameen{ font-family:var(--accent); font-style:italic; font-size:8.6pt; opacity:.65; margin:1mm 0 2.5mm;}
+.pal-hex{ font-family:var(--display); font-size:7.6pt; letter-spacing:.15em; opacity:.6; }
+.pal-note{ font-size:7.6pt; line-height:1.8; opacity:.8; margin-top:2.4mm; }
+
+/* ---------- COLOPHON ---------- */
+.colophon{ padding:20mm; display:flex; flex-direction:column; justify-content:space-between; box-sizing:border-box; }
+.colophon .top{ }
+.colophon .title-jp{ font-size:15pt; font-weight:700; letter-spacing:.1em; }
+.colophon .credo{ font-family:var(--accent); font-style:italic; font-size:15pt; line-height:2.1; margin-top:12mm; max-width:130mm; opacity:.92;}
+.colophon .grid3{ display:grid; grid-template-columns:repeat(3,1fr); gap:6mm; margin-top:16mm; font-size:8pt; line-height:1.9;}
+.colophon .grid3 h4{ font-family:var(--display); font-size:7.4pt; letter-spacing:.22em; opacity:.6; margin-bottom:2.4mm; }
+.colophon .bottom{ display:flex; justify-content:space-between; align-items:flex-end; font-size:7.6pt; letter-spacing:.12em; opacity:.6; }
+</style>
+</head>
+<body>
+
+<!-- ============ PAGE 1 : COVER ============ -->
+<section class="page dark cover">
+  <div class="frame"></div>
+  <div class="top-row">
+    <div class="tag">MAISON OF CONTRADICTION</div>
+    <div class="signal"><span class="dot red"></span><span class="dot amber"></span><span class="dot green"></span></div>
+  </div>
+  <div class="center">
+    <div class="brand-jp">矛盾の衣裳</div>
+    <div class="brand-en">PARADOX&nbsp;WARDROBE</div>
+    <div class="rule"></div>
+    <div class="kuchi">「進め」と「止まれ」が、同時に灯る。<br>矛盾を脱がず、着る。</div>
+  </div>
+  <div class="bottom-row">
+    <div class="col"><span class="num">CONCEPT BOOK</span><span>Collection Philosophy — Silhouette — Material</span></div>
+    <div class="col" style="text-align:right"><span class="num">信号機論 / 断片 / 体技心 / 華麗な憂うつ</span><span>Season 00 — Original Line</span></div>
+  </div>
+</section>
+
+<!-- ============ PAGE 2 : STATEMENT ============ -->
+<section class="page light statement">
+  <div class="frame"></div>
+  <div class="head">
+    <div class="eyebrow" style="color:var(--ink)">MANIFESTO</div>
+    <div class="eyebrow" style="color:var(--ink)">01 / 07</div>
+  </div>
+  <div class="title-jp">コンセプト・ステートメント</div>
+  <div class="pull">矛盾を、<b>着る。</b></div>
+  <div class="body">
+    <p>信号機は、決して「止まれ」と「進め」を同時に灯さない。しかし人間の内側では、その二つの命令がいつも同時に点滅している。行きたいのに、留まりたい。晒したいのに、隠したい。強くありたいのに、崩れていたい。パラドックス・ワードローブは、その同時点灯を禁止しない服のためのブランドである。</p>
+    <p>私たちは矛盾を解決しない。矛盾を裁断し、縫い合わせ、一着の内側に共存させる。ゆるさは締まりを裏切らず、断片は全体を裏切らない。華やぎは憂うつを裏切らない。すべての対立は、ここでは並置される権利を持つ。</p>
+    <p>三原康裕の系譜にある崩しの美学を継ぎながら、私たちはそれをさらに一歩、内側へ折り込む。表面の脱構築ではなく、着る人間の感情そのものの脱構築として。ゆるっとした輪郭の奥に、細く張った一本の芯が通っている――それこそが、このワードローブの正体である。</p>
+  </div>
+  <div class="foot-mark">
+    <div class="signature">PARADOX WARDROBE — CONCEPT BOOK</div>
+    <div class="signature">頁 02</div>
+  </div>
+</section>
+
+<!-- ============ PAGE 3 : FOUR PILLARS ============ -->
+<section class="page light pillars">
+  <div class="frame"></div>
+  <div class="head">
+    <div class="title-en">FOUR PARADOXES</div>
+    <div class="title-jp">四つの矛盾 — デザインの根拠</div>
+  </div>
+  <div class="grid2">
+
+    <div class="pillar red-acc">
+      <div class="no">I</div>
+      <div class="mark">
+        <svg viewBox="0 0 120 40" width="120" height="40">
+          <circle cx="20" cy="20" r="11" fill="none" stroke="var(--red)" stroke-width="1.6"/>
+          <circle cx="60" cy="20" r="11" fill="none" stroke="var(--amber)" stroke-width="1.6"/>
+          <circle cx="100" cy="20" r="11" fill="none" stroke="var(--green)" stroke-width="1.6"/>
+          <circle cx="20" cy="20" r="4" fill="var(--red)"/>
+          <circle cx="100" cy="20" r="4" fill="var(--green)"/>
+        </svg>
+      </div>
+      <h3>矛盾（信号機論）</h3>
+      <div class="sub">Theory of the Signal</div>
+      <p>信号は本来ひとつの色しか選べない。だが私たちの生地は、赤と緑を同じ一枚の裏表に沈める。彩度を落とし、コントラストという名の緊張だけを残すことで、二つの禁止と許可が一着の内側で同時に成立する。</p>
+    </div>
+
+    <div class="pillar amber-acc">
+      <div class="no">II</div>
+      <div class="mark">
+        <svg viewBox="0 0 120 40" width="120" height="40">
+          <path d="M10 8 L46 8 L40 32 L4 32 Z" fill="none" stroke="var(--ink)" stroke-width="1.4"/>
+          <path d="M54 12 L86 6 L92 28 L58 34 Z" fill="none" stroke="var(--ink)" stroke-width="1.4" stroke-dasharray="2 2"/>
+          <path d="M96 10 L116 14 L110 30 L94 28 Z" fill="none" stroke="var(--ink)" stroke-width="1.4"/>
+        </svg>
+      </div>
+      <h3>断片</h3>
+      <div class="sub">Fragments, Unfinished</div>
+      <p>完成された一着など信じない。裁ち落とした端切れ、途中で止まったステッチ、左右非対称の襟——「未完成」であることこそが、この身体の記憶を運ぶ器になる。パーツは、意味づけされる前にただ在る権利を持つ。</p>
+    </div>
+
+    <div class="pillar green-acc">
+      <div class="no">III</div>
+      <div class="mark">
+        <svg viewBox="0 0 120 40" width="120" height="40">
+          <circle cx="60" cy="20" r="15" fill="none" stroke="var(--ink)" stroke-width="1.4"/>
+          <line x1="60" y1="5" x2="60" y2="35" stroke="var(--ink)" stroke-width="0.8"/>
+          <line x1="45" y1="20" x2="75" y2="20" stroke="var(--ink)" stroke-width="0.8"/>
+        </svg>
+      </div>
+      <h3>体技心</h3>
+      <div class="sub">Body, Technique, Mind — reversed</div>
+      <p>心技体、ではない。まず身体が動き、技術がそれに応え、心はいちばん最後に追いつく。服は思想の前に、まず「着られる」という運動でなければならない。ゆるさは怠惰ではなく、可動域という設計思想である。</p>
+    </div>
+
+    <div class="pillar ink-acc">
+      <div class="no">IV</div>
+      <div class="mark">
+        <svg viewBox="0 0 120 40" width="120" height="40">
+          <path d="M60 6 C 40 6 40 20 60 22 C 80 24 80 38 60 38" fill="none" stroke="var(--ink)" stroke-width="1.4"/>
+          <circle cx="60" cy="6" r="2.2" fill="var(--red)"/>
+          <circle cx="60" cy="38" r="2.2" fill="var(--ink)"/>
+        </svg>
+      </div>
+      <h3>華麗な憂うつ</h3>
+      <div class="sub">Splendid Melancholy</div>
+      <p>喪服のように美しく、祝祭のように寂しく。過剰な装飾は悲しみを隠すためにあり、静かな沈黙は華やぎを隠すためにある。この矛盾した感情の混在こそ、私たちが纏う「気分」そのものである。</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ PAGE 4 : SILHOUETTE 01 ============ -->
+<section class="page light looks">
+  <div class="frame"></div>
+  <div class="head">
+    <div class="title-jp">シルエット案 — Look 01 / 02</div>
+    <div class="eyebrow" style="color:var(--ink)">SILHOUETTE STUDIES</div>
+  </div>
+  <div class="lookrow">
+
+    <div class="lookcard">
+      <div class="figwrap">
+        <svg viewBox="0 0 200 420" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="34" r="16" fill="none" stroke="var(--ink)" stroke-width="1.6"/>
+          <path d="M100 50 L100 78" stroke="var(--ink)" stroke-width="1.6"/>
+          <path d="M40 96
+                   C 40 78 70 62 100 62
+                   C 130 62 160 78 160 96
+                   L 172 260
+                   C 174 300 150 300 150 270
+                   L 142 150
+                   L 138 300
+                   C 138 340 130 400 122 408
+                   L 78 408
+                   C 70 400 62 340 62 300
+                   L 58 150
+                   L 50 270
+                   C 50 300 26 300 28 260 Z"
+                fill="none" stroke="var(--ink)" stroke-width="1.6" stroke-linejoin="round"/>
+          <path d="M76 130 C 76 190 78 250 84 300" fill="none" stroke="var(--red)" stroke-width="1.1" stroke-dasharray="1 4"/>
+          <path d="M124 130 C 124 190 122 250 116 300" fill="none" stroke="var(--red)" stroke-width="1.1" stroke-dasharray="1 4"/>
+          <path d="M62 178 L138 178" stroke="var(--ink)" stroke-width="0.9" stroke-dasharray="3 3"/>
+          <path d="M70 172 C 100 182 100 182 130 172" fill="none" stroke="var(--amber)" stroke-width="1.3"/>
+        </svg>
+      </div>
+      <div class="info">
+        <div class="lookno">LOOK 01</div>
+        <div class="lookname">大外套、直立の矛盾</div>
+        <div class="looknameen">Oversize Signal Coat</div>
+        <div class="lookdesc">肩を大きく落とし、膝下まで長く伸ばした一枚のコート。表からは終始ゆるいが、内側に仕込んだベルトが腰を静かに絞り、遠目には細身の一本線として立つ。ゆるさと細さ、両方の申告が同時に成立する。</div>
+        <div class="tags"><span class="tagchip">信号機論</span><span class="tagchip">DROP SHOULDER</span><span class="tagchip">内蔵ベルト</span></div>
+      </div>
+    </div>
+
+    <div class="lookcard">
+      <div class="figwrap">
+        <svg viewBox="0 0 200 420" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="34" r="16" fill="none" stroke="var(--ink)" stroke-width="1.6"/>
+          <path d="M100 50 L100 74" stroke="var(--ink)" stroke-width="1.6"/>
+          <path d="M46 92 C 46 76 72 64 100 64 C 128 64 154 76 154 92 L 160 190 L 44 190 Z"
+                fill="none" stroke="var(--ink)" stroke-width="1.6" stroke-linejoin="round"/>
+          <path d="M34 150 L 168 168 L 160 236 L 30 214 Z"
+                fill="none" stroke="var(--amber)" stroke-width="1.4" stroke-linejoin="round"/>
+          <path d="M54 200 C 54 260 58 330 66 404 L 100 410 L 92 240 Z"
+                fill="none" stroke="var(--ink)" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M146 200 C 146 260 142 330 134 404 L 100 410 L 108 240 Z"
+                fill="none" stroke="var(--ink)" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M92 240 L100 410" stroke="var(--red)" stroke-width="1" stroke-dasharray="1 4"/>
+        </svg>
+      </div>
+      <div class="info">
+        <div class="lookno">LOOK 02</div>
+        <div class="lookname">断片の重層</div>
+        <div class="looknameen">Fragment Layering</div>
+        <div class="lookdesc">裁ち丈の異なる三枚のパネルを、意図的にずらして重ねる。本来は隠れるはずの裏地の色と縫い代が、動くたびに表へ露出する。「未完成」の縫製痕そのものを、意匠として前面化する。</div>
+        <div class="tags"><span class="tagchip">断片</span><span class="tagchip">ASYMMETRIC HEM</span><span class="tagchip">裏地露出</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ PAGE 5 : SILHOUETTE 02 ============ -->
+<section class="page light looks">
+  <div class="frame"></div>
+  <div class="head">
+    <div class="title-jp">シルエット案 — Look 03 / 04</div>
+    <div class="eyebrow" style="color:var(--ink)">SILHOUETTE STUDIES</div>
+  </div>
+  <div class="lookrow">
+
+    <div class="lookcard">
+      <div class="figwrap">
+        <svg viewBox="0 0 200 420" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="34" r="16" fill="none" stroke="var(--ink)" stroke-width="1.6"/>
+          <path d="M100 50 L100 74" stroke="var(--ink)" stroke-width="1.6"/>
+          <path d="M30 100 C 30 80 66 66 100 66 C 134 66 170 80 170 100 L 176 160 L 24 160 Z"
+                fill="none" stroke="var(--ink)" stroke-width="1.6" stroke-linejoin="round"/>
+          <path d="M64 150 C 60 180 60 200 70 210 C 80 216 120 216 130 210 C 140 200 140 180 136 150"
+                fill="none" stroke="var(--green)" stroke-width="1.5"/>
+          <path d="M40 205 C 20 260 20 340 34 404 L 92 404 L 86 230 Z"
+                fill="none" stroke="var(--ink)" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M160 205 C 180 260 180 340 166 404 L 108 404 L 114 230 Z"
+                fill="none" stroke="var(--ink)" stroke-width="1.5" stroke-linejoin="round"/>
+          <path d="M86 230 L92 404 M114 230 L108 404" stroke="var(--ink)" stroke-width="0.7" stroke-dasharray="2 3"/>
+        </svg>
+      </div>
+      <div class="info">
+        <div class="lookno">LOOK 03</div>
+        <div class="lookname">体技心の一着</div>
+        <div class="looknameen">Bound Slouch</div>
+        <div class="lookdesc">可動域を最優先したドロップショルダーとワイドパンツに、体幹だけを静かに締める内蔵パネルを組み合わせる。静止時は輪郭を持たず、歩く・座る・跳ぶという運動の中で初めて、シルエットが立ち上がる。</div>
+        <div class="tags"><span class="tagchip">体技心</span><span class="tagchip">WIDE PANTS</span><span class="tagchip">内蔵コルセット</span></div>
+      </div>
+    </div>
+
+    <div class="lookcard">
+      <div class="figwrap">
+        <svg viewBox="0 0 200 420" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="34" r="16" fill="none" stroke="var(--ink)" stroke-width="1.6"/>
+          <path d="M100 50 L100 76" stroke="var(--ink)" stroke-width="1.6"/>
+          <path d="M54 96 C 54 80 76 66 100 66 C 124 66 146 80 146 96
+                   L 156 200 C 170 260 178 340 168 406
+                   L 32 406 C 22 340 30 260 44 200 Z"
+                fill="none" stroke="var(--ink)" stroke-width="1.6" stroke-linejoin="round"/>
+          <path d="M70 110 C 70 200 76 320 84 400" fill="none" stroke="var(--red)" stroke-width="1.3"/>
+          <path d="M130 110 C 130 200 124 320 116 400" fill="none" stroke="var(--red)" stroke-width="1.3"/>
+          <path d="M62 150 C 100 168 100 168 138 150" fill="none" stroke="var(--ink)" stroke-width="0.8" stroke-dasharray="2 3"/>
+        </svg>
+      </div>
+      <div class="info">
+        <div class="lookno">LOOK 04</div>
+        <div class="lookname">華麗な憂うつのドレス</div>
+        <div class="looknameen">Melancholic Bloom</div>
+        <div class="lookdesc">喪の黒で覆われた一枚のロングドレス。内側にだけ光沢のある深紅を仕込み、歩く一瞬だけ裾からその祝祭の色がのぞく。悲しみは装飾を隠す蓋であり、装飾は悲しみを隠す蓋である。</div>
+        <div class="tags"><span class="tagchip">華麗な憂うつ</span><span class="tagchip">LONG DRESS</span><span class="tagchip">裏地に緋色</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ PAGE 6 : MATERIALS ============ -->
+<section class="page light materials">
+  <div class="frame"></div>
+  <div class="head" style="display:flex;justify-content:space-between;align-items:baseline;">
+    <div></div>
+    <div class="eyebrow" style="color:var(--ink)">05 / 07</div>
+  </div>
+  <div class="title-jp">素材構成 — Material Composition</div>
+  <div class="lede">四つの矛盾それぞれに、対応する生地を割り当てる。表情の異なる素材を同じ一着の中に併置することで、思想は手ざわりとして体に伝わる。</div>
+
+  <table class="mtable">
+    <thead>
+      <tr><th style="width:8%">SWATCH</th><th style="width:34%">MATERIAL</th><th style="width:14%">COMPOSITION</th><th style="width:12%">THEME</th><th>NOTE</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><div class="swatch" style="background:#3b3733;"></div></td>
+        <td><div class="mname">ウール・ギャバジン（両面起毛）</div><div class="mnameen">Wool Gabardine, Double-Face</div></td>
+        <td class="mcomp">WOOL 70 / POLY 30</td>
+        <td>信号機論</td>
+        <td>表はマット、裏面はわずかに光沢——一枚の生地の裏表に「禁止」と「許可」を沈める、コレクションの基幹素材。</td>
+      </tr>
+      <tr>
+        <td><div class="swatch" style="background:#6b6255;"></div></td>
+        <td><div class="mname">リサイクルナイロン・タフタ</div><div class="mnameen">Recycled Nylon Taffeta</div></td>
+        <td class="mcomp">NYLON 100</td>
+        <td>断片</td>
+        <td>張りとシワの記憶を残す裏地素材。表地の裁ち端からわずかに覗かせ、「未完成」を意匠化する。</td>
+      </tr>
+      <tr>
+        <td><div class="swatch" style="background:#4b4438;"></div></td>
+        <td><div class="mname">コットン・ダブルクロス</div><div class="mnameen">Cotton Double Cloth</div></td>
+        <td class="mcomp">COTTON 100</td>
+        <td>断片</td>
+        <td>表裏どちらも「表」として成立する構造。層をずらして重ねることで、境界そのものを見せる。</td>
+      </tr>
+      <tr>
+        <td><div class="swatch" style="background:#57584c;"></div></td>
+        <td><div class="mname">ストレッチ・サージ（内蔵エラスティック）</div><div class="mnameen">Stretch Serge with Bonded Elastic Tape</div></td>
+        <td class="mcomp">WOOL 60 / NYLON 30 / PU 10</td>
+        <td>体技心</td>
+        <td>外側の落ち感を保ったまま、体幹部だけに伸縮テープを内蔵。静止時は緩く、運動時にのみ機能する二重構造。</td>
+      </tr>
+      <tr>
+        <td><div class="swatch" style="background:#5c231a;"></div></td>
+        <td><div class="mname">シルク・サテン（深緋・裏地専用）</div><div class="mnameen">Silk Satin, Deep Crimson Lining</div></td>
+        <td class="mcomp">SILK 100</td>
+        <td>華麗な憂うつ</td>
+        <td>喪の黒地の内側にのみ使用。歩行時の裾の翻りでだけ一瞬視認される、隠された祝祭。</td>
+      </tr>
+      <tr>
+        <td><div class="swatch" style="background:#8b8478;"></div></td>
+        <td><div class="mname">ウォッシュ加工キャンバス（フレイ仕上げ）</div><div class="mnameen">Washed Canvas, Raw-Fray Finish</div></td>
+        <td class="mcomp">COTTON 80 / LINEN 20</td>
+        <td>全ライン共通</td>
+        <td>裾・襟ぐりをあえて未処理のまま洗い出す、シグネチャー仕上げ。全てのルックに共通して現れる「傷跡」。</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============ PAGE 7 : PALETTE ============ -->
+<section class="page dark palette">
+  <div class="frame"></div>
+  <div class="head" style="display:flex;justify-content:space-between;align-items:baseline;">
+    <div></div>
+    <div class="eyebrow">06 / 07</div>
+  </div>
+  <div class="title-jp">配色 — 信号機論のカラーパレット</div>
+  <div class="pal-grid">
+
+    <div class="pal-card">
+      <div class="pal-swatch" style="background:var(--red);"></div>
+      <div class="pal-info">
+        <div class="pal-name">沈黙の赤</div>
+        <div class="pal-nameen">Silent Red</div>
+        <div class="pal-hex">#8C3B2C</div>
+        <div class="pal-note">停止の色ではなく、情熱を沈めた色として。裏地・差し色にのみ使用する。</div>
+      </div>
+    </div>
+
+    <div class="pal-card">
+      <div class="pal-swatch" style="background:var(--amber);"></div>
+      <div class="pal-info">
+        <div class="pal-name">逡巡の黄</div>
+        <div class="pal-nameen">Hesitation Amber</div>
+        <div class="pal-hex">#C69A46</div>
+        <div class="pal-note">警戒ではなく迷いの色。ステッチ、金具、縁取りに微量だけ差す。</div>
+      </div>
+    </div>
+
+    <div class="pal-card">
+      <div class="pal-swatch" style="background:var(--green);"></div>
+      <div class="pal-info">
+        <div class="pal-name">通過の緑</div>
+        <div class="pal-nameen">Passing Green</div>
+        <div class="pal-hex">#454F3A</div>
+        <div class="pal-note">前進ではなく、通り過ぎた記憶の色。深く沈めたグリーンで、主張しない。</div>
+      </div>
+    </div>
+
+    <div class="pal-card">
+      <div class="pal-swatch" style="background:#17140f;"></div>
+      <div class="pal-info">
+        <div class="pal-name">夜の黒</div>
+        <div class="pal-nameen">Night Charcoal</div>
+        <div class="pal-hex">#17140F</div>
+        <div class="pal-note">ベースを占める、ほぼ全てのルックの土台となる色。</div>
+      </div>
+    </div>
+
+    <div class="pal-card">
+      <div class="pal-swatch" style="background:#ece4d3;"></div>
+      <div class="pal-info">
+        <div class="pal-name">骨の白</div>
+        <div class="pal-nameen">Bone White</div>
+        <div class="pal-hex">#ECE4D3</div>
+        <div class="pal-note">裏地・下地としての白。清潔さではなく、乾いた質感として。</div>
+      </div>
+    </div>
+
+    <div class="pal-card">
+      <div class="pal-swatch" style="background:#8a8377;"></div>
+      <div class="pal-info">
+        <div class="pal-name">鉛の灰</div>
+        <div class="pal-nameen">Lead Grey</div>
+        <div class="pal-hex">#8A8377</div>
+        <div class="pal-note">全ての色を仲介する緩衝色。彩度の高い三色を、都市の空気に溶かす。</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ PAGE 8 : COLOPHON ============ -->
+<section class="page light colophon">
+  <div class="frame"></div>
+  <div class="top">
+    <div class="eyebrow" style="color:var(--ink)">CLOSING — 07 / 07</div>
+    <div class="title-jp" style="margin-top:4mm;">おわりに</div>
+    <div class="credo">ゆるく、しかし細く。<br>崩れて、しかし立つ。<br>矛盾は欠陥ではない。<br>それは、生きて着るための唯一の設計図である。</div>
+  </div>
+  <div class="grid3">
+    <div>
+      <h4>BRAND</h4>
+      パラドックス・ワードローブ<br>PARADOX WARDROBE<br>Original Wardrobe Line
+    </div>
+    <div>
+      <h4>LINEAGE</h4>
+      三原康裕の「崩し」の美学を出発点に、独自の矛盾理論へと展開する。
+    </div>
+    <div>
+      <h4>THEMES</h4>
+      矛盾（信号機論）・断片・体技心・華麗な憂うつ
+    </div>
+  </div>
+  <div class="bottom">
+    <div>PARADOX WARDROBE CONCEPT BOOK</div>
+    <div>頁 07 / 07</div>
+  </div>
+</section>
+
+</body>
+</html>
