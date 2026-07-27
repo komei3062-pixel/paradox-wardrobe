@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<link rel="stylesheet" href="fonts-local.css">
+<style>
+:root{
+  --ink:#141210; --bone:#ece4d3; --red:#8c3b2c; --redL:#b2503b; --amber:#c69a46;
+  --green:#454f3a; --serif:'Noto Serif JP',serif; --display:'Cinzel',serif; --accent:'Cormorant Garamond',serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#0e0c0a;}
+.plate{ position:relative; width:900px; height:1500px; overflow:hidden; background:#141210; }
+.plate svg{ position:absolute; inset:0; }
+.cap{
+  position:absolute; left:0; right:0; top:1300px; height:200px; padding:28px 46px 34px;
+  background:linear-gradient(to top, rgba(0,0,0,0.72) 40%, rgba(0,0,0,0));
+  color:var(--bone);
+}
+.cap .no{ font-family:var(--display); font-size:12px; letter-spacing:.35em; opacity:.7; }
+.cap .name{ font-family:'Noto Serif JP',serif; font-weight:700; font-size:27px; letter-spacing:.05em; margin:6px 0 2px; }
+.cap .nameen{ font-family:var(--accent); font-style:italic; font-size:16px; opacity:.75; }
+.top-tag{ position:absolute; top:26px; left:36px; font-family:var(--display); font-size:10px; letter-spacing:.3em; color:var(--bone); opacity:.55; }
+.top-tag2{ position:absolute; top:26px; right:36px; font-family:var(--display); font-size:10px; letter-spacing:.3em; color:var(--bone); opacity:.55; }
+</style>
+</head>
+<body>
+
+<!-- ============ LOOK 01 ============ -->
+<div class="plate" id="look01">
+<svg viewBox="0 0 900 1500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg1" cx="50%" cy="34%" r="75%">
+      <stop offset="0%" stop-color="#2a2620"/>
+      <stop offset="60%" stop-color="#17140f"/>
+      <stop offset="100%" stop-color="#0c0a08"/>
+    </radialGradient>
+    <linearGradient id="coat1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2c2925"/>
+      <stop offset="18%" stop-color="#454038"/>
+      <stop offset="50%" stop-color="#514b41"/>
+      <stop offset="82%" stop-color="#403b33"/>
+      <stop offset="100%" stop-color="#221f1b"/>
+    </linearGradient>
+    <linearGradient id="skin1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e6dbc6"/>
+      <stop offset="100%" stop-color="#cfc2a8"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1500" fill="url(#bg1)"/>
+
+  <g transform="translate(50,10)">
+  <!-- legs/feet base (bone) -->
+  <g fill="url(#skin1)">
+    <path d="M378 900 C 374 1000 376 1120 384 1240 C 386 1280 388 1320 390 1350 L 422 1350 C 422 1320 420 1280 416 1240 C 410 1120 410 1000 412 902 Z"/>
+    <path d="M384 1350 L 424 1350 C 440 1354 458 1361 462 1372 C 464 1380 458 1386 444 1386 L 380 1386 C 372 1386 368 1380 370 1372 C 374 1361 378 1354 384 1350 Z"/>
+    <path d="M522 900 C 526 1000 524 1120 516 1240 C 514 1280 512 1320 510 1350 L 478 1350 C 478 1320 480 1280 484 1240 C 490 1120 490 1000 488 902 Z"/>
+    <path d="M516 1350 L 476 1350 C 460 1354 442 1361 438 1372 C 436 1380 442 1386 456 1386 L 520 1386 C 528 1386 532 1380 530 1372 C 526 1361 522 1354 516 1350 Z"/>
+  </g>
+
+  <!-- head/neck -->
+  <g fill="url(#skin1)">
+    <ellipse cx="450" cy="98" rx="50" ry="64"/>
+    <path d="M428 156 L 472 156 L 468 206 L 432 206 Z"/>
+  </g>
+
+  <!-- hands peeking from sleeve -->
+  <g fill="url(#skin1)">
+    <ellipse cx="300" cy="620" rx="17" ry="30"/>
+    <ellipse cx="600" cy="620" rx="17" ry="30"/>
+  </g>
+
+  <!-- sleeves (drawn first, so coat body overlaps their tops) -->
+  <g fill="url(#coat1)" stroke="#1b1815" stroke-width="1.5" stroke-linejoin="round">
+    <path d="M296 255
+             C 262 280 240 330 232 390
+             C 226 440 228 490 240 530
+             C 246 555 258 575 272 585
+             L 296 578
+             C 284 555 276 525 272 490
+             C 266 440 266 390 276 345
+             C 284 310 302 285 324 268 Z"/>
+    <path d="M604 255
+             C 638 280 660 330 668 390
+             C 674 440 672 490 660 530
+             C 654 555 642 575 628 585
+             L 604 578
+             C 616 555 624 525 628 490
+             C 634 440 634 390 624 345
+             C 616 310 598 285 576 268 Z"/>
+  </g>
+
+  <!-- OVERSIZE COAT BODY (single clean outline, cinched waist + flared hem) -->
+  <g fill="url(#coat1)" stroke="#1b1815" stroke-width="1.5" stroke-linejoin="round">
+    <path d="M450 205
+             C 400 208 350 220 322 250
+             C 300 275 292 310 300 340
+             C 282 420 270 500 272 560
+             C 274 592 300 616 340 624
+             C 300 652 262 720 242 820
+             C 224 920 220 1040 230 1140
+             C 234 1165 248 1180 272 1182
+             L 628 1182
+             C 652 1180 666 1165 670 1140
+             C 680 1040 676 920 658 820
+             C 638 720 600 652 560 624
+             C 600 616 626 592 628 560
+             C 630 500 618 420 600 340
+             C 608 310 600 275 578 250
+             C 550 220 500 208 450 205 Z"/>
+  </g>
+
+  <!-- inner belt hint -->
+  <path d="M366 618 C 406 634 494 634 534 618" fill="none" stroke="var(--amber)" stroke-width="3.5" opacity="0.9"/>
+
+  <!-- lapel hint of red lining -->
+  <path d="M420 210 C 405 240 400 270 404 300 L 424 296 C 422 265 424 235 434 208 Z" fill="var(--red)" opacity="0.9"/>
+
+  <!-- fold shading (stroke-only, drawn atop the filled coat) -->
+  <path d="M330 400 C 322 480 320 540 328 590" stroke="#000" stroke-width="9" opacity="0.14" fill="none"/>
+  <path d="M570 400 C 578 480 580 540 572 590" stroke="#000" stroke-width="9" opacity="0.14" fill="none"/>
+  <path d="M300 750 C 280 880 276 1010 288 1130" stroke="#000" stroke-width="12" opacity="0.13" fill="none"/>
+  <path d="M600 750 C 620 880 624 1010 612 1130" stroke="#000" stroke-width="12" opacity="0.13" fill="none"/>
+  <path d="M450 640 L 450 1160" stroke="#fff" stroke-width="7" opacity="0.05" fill="none"/>
+  </g>
+</svg>
+<div class="top-tag">MAISON OF CONTRADICTION</div>
+<div class="top-tag2">PARADOX WARDROBE</div>
+<div class="cap">
+  <div class="no">LOOK 01 &nbsp;/&nbsp; 信号機論</div>
+  <div class="name">大外套、直立の矛盾</div>
+  <div class="nameen">Oversize Signal Coat</div>
+</div>
+</div>
+
+<!-- ============ LOOK 02 ============ -->
+<div class="plate" id="look02">
+<svg viewBox="0 0 900 1500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg2" cx="50%" cy="34%" r="75%">
+      <stop offset="0%" stop-color="#2a2620"/>
+      <stop offset="60%" stop-color="#17140f"/>
+      <stop offset="100%" stop-color="#0c0a08"/>
+    </radialGradient>
+    <linearGradient id="base2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#c9bfa8"/>
+      <stop offset="50%" stop-color="#ded4bd"/>
+      <stop offset="100%" stop-color="#b8ad94"/>
+    </linearGradient>
+    <linearGradient id="mid2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#5c5546"/>
+      <stop offset="100%" stop-color="#403b30"/>
+    </linearGradient>
+    <linearGradient id="pant2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2c2925"/>
+      <stop offset="50%" stop-color="#3a352d"/>
+      <stop offset="100%" stop-color="#211e19"/>
+    </linearGradient>
+    <linearGradient id="skin1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e6dbc6"/>
+      <stop offset="100%" stop-color="#cfc2a8"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1500" fill="url(#bg2)"/>
+
+  <g transform="translate(50,10)">
+  <g fill="url(#skin1)">
+    <ellipse cx="450" cy="98" rx="50" ry="64"/>
+    <path d="M428 156 L 472 156 L 468 206 L 432 206 Z"/>
+    <ellipse cx="260" cy="500" rx="16" ry="28"/>
+    <ellipse cx="640" cy="500" rx="16" ry="28"/>
+  </g>
+
+  <!-- wide trousers -->
+  <g fill="url(#pant2)" stroke="#141210" stroke-width="1.5" stroke-linejoin="round">
+    <path d="M366 618 C 350 740 336 880 322 1040 C 318 1090 316 1140 318 1180 L 372 1180 C 378 1120 384 1040 392 950 C 398 870 402 780 402 700 C 402 660 400 636 396 616 Z"/>
+    <path d="M534 618 C 550 740 564 880 578 1040 C 582 1090 584 1140 582 1180 L 528 1180 C 522 1120 516 1040 508 950 C 502 870 498 780 498 700 C 498 660 500 636 504 616 Z"/>
+  </g>
+  <path d="M320 1180 L 374 1180 L 372 1210 L 316 1210 Z" fill="#18140f" opacity="0.7"/>
+  <path d="M580 1180 L 526 1180 L 528 1210 L 584 1210 Z" fill="#18140f" opacity="0.7"/>
+
+  <!-- sleeves, short (layered look) -->
+  <g fill="url(#base2)" stroke="#141210" stroke-width="1.5" stroke-linejoin="round">
+    <path d="M300 258
+             C 270 280 250 320 242 370
+             C 236 410 238 450 248 480
+             L 272 472
+             C 264 448 262 418 268 384
+             C 274 348 288 316 312 292 Z"/>
+    <path d="M600 258
+             C 630 280 650 320 658 370
+             C 664 410 662 450 652 480
+             L 628 472
+             C 636 448 638 418 632 384
+             C 626 348 612 316 588 292 Z"/>
+  </g>
+
+  <!-- base layer bone jacket, hip length -->
+  <g fill="url(#base2)" stroke="#141210" stroke-width="1.5" stroke-linejoin="round">
+    <path d="M450 208
+             C 386 211 334 228 308 258
+             C 296 288 292 320 300 350
+             C 292 420 288 490 296 555
+             C 300 590 320 615 360 622
+             L 540 622
+             C 580 615 600 590 604 555
+             C 612 490 608 420 600 350
+             C 608 320 604 288 592 258
+             C 566 228 514 211 450 208 Z"/>
+  </g>
+
+  <!-- mid layer diagonal panel (fragment), curved hem to follow the body -->
+  <g fill="url(#mid2)" stroke="#141210" stroke-width="1.5" stroke-linejoin="round" opacity="0.97">
+    <path d="M272 372 L 632 400
+             C 626 470 620 540 612 606
+             C 500 626 380 622 256 580
+             C 262 512 266 442 272 372 Z"/>
+  </g>
+
+  <!-- outer amber-edged fragment panel, offset, curved hem -->
+  <g fill="#8f8264" stroke="var(--amber)" stroke-width="4" stroke-linejoin="round" opacity="0.92">
+    <path d="M256 556 C 380 596 500 600 610 580
+             C 608 604 604 630 598 654
+             C 486 674 366 670 248 630
+             C 250 605 253 580 256 556 Z"/>
+  </g>
+
+  <!-- exposed lining strip at collar -->
+  <path d="M420 214 L 480 214 L 476 280 L 424 280 Z" fill="var(--red)" opacity="0.85"/>
+
+  <!-- fray marks -->
+  <g stroke="#141210" stroke-width="2" opacity="0.5">
+    <path d="M256 560 l -6 5 M268 562 l -6 5 M280 564 l -6 5 M292 566 l -6 5"/>
+    <path d="M616 596 l 6 5 M604 594 l 6 5 M592 592 l 6 5"/>
+  </g>
+
+  <!-- fold shading -->
+  <path d="M330 350 C 322 420 320 480 328 550" stroke="#000" stroke-width="8" opacity="0.12" fill="none"/>
+  <path d="M570 350 C 578 420 580 480 572 550" stroke="#000" stroke-width="8" opacity="0.12" fill="none"/>
+  </g>
+</svg>
+<div class="top-tag">MAISON OF CONTRADICTION</div>
+<div class="top-tag2">PARADOX WARDROBE</div>
+<div class="cap">
+  <div class="no">LOOK 02 &nbsp;/&nbsp; 断片</div>
+  <div class="name">断片の重層</div>
+  <div class="nameen">Fragment Layering</div>
+</div>
+</div>
+
+<!-- ============ LOOK 03 ============ -->
+<div class="plate" id="look03">
+<svg viewBox="0 0 900 1500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg3" cx="50%" cy="34%" r="75%">
+      <stop offset="0%" stop-color="#242920"/>
+      <stop offset="60%" stop-color="#14170f"/>
+      <stop offset="100%" stop-color="#0a0c08"/>
+    </radialGradient>
+    <linearGradient id="top3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3a4034"/>
+      <stop offset="16%" stop-color="#57604c"/>
+      <stop offset="50%" stop-color="#636b56"/>
+      <stop offset="84%" stop-color="#4c5340"/>
+      <stop offset="100%" stop-color="#2c3126"/>
+    </linearGradient>
+    <linearGradient id="pant3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#33372c"/>
+      <stop offset="50%" stop-color="#454b3a"/>
+      <stop offset="100%" stop-color="#282c22"/>
+    </linearGradient>
+    <linearGradient id="skin1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e6dbc6"/>
+      <stop offset="100%" stop-color="#cfc2a8"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1500" fill="url(#bg3)"/>
+
+  <g transform="translate(50,10)">
+  <g fill="url(#skin1)">
+    <ellipse cx="450" cy="98" rx="50" ry="64"/>
+    <path d="M428 156 L 472 156 L 468 206 L 432 206 Z"/>
+    <ellipse cx="278" cy="540" rx="16" ry="28"/>
+    <ellipse cx="622" cy="540" rx="16" ry="28"/>
+  </g>
+  <!-- feet -->
+  <g fill="url(#skin1)">
+    <path d="M400 1240 C 396 1280 396 1320 400 1350 L 430 1350 C 432 1320 430 1280 428 1240 Z"/>
+    <path d="M400 1350 L 432 1350 C 448 1354 464 1361 468 1372 C 470 1380 464 1386 450 1386 L 396 1386 C 388 1386 384 1380 386 1372 C 390 1361 394 1354 400 1350 Z"/>
+    <path d="M500 1240 C 504 1280 504 1320 500 1350 L 470 1350 C 468 1320 470 1280 472 1240 Z"/>
+    <path d="M500 1350 L 468 1350 C 452 1354 436 1361 432 1372 C 430 1380 436 1386 450 1386 L 504 1386 C 512 1386 516 1380 514 1372 C 510 1361 506 1354 500 1350 Z"/>
+  </g>
+
+  <!-- wide pants -->
+  <g fill="url(#pant3)" stroke="#141210" stroke-width="1.5" stroke-linejoin="round">
+    <path d="M356 660 C 336 800 320 960 402 1250 L 440 1250 C 420 1080 412 900 420 700 C 422 680 420 665 414 655 Z"/>
+    <path d="M544 660 C 564 800 580 960 498 1250 L 460 1250 C 480 1080 488 900 480 700 C 478 680 480 665 486 655 Z"/>
+  </g>
+
+  <!-- drop-shoulder oversized top (bell shape) -->
+  <g fill="url(#top3)" stroke="#141210" stroke-width="1.5" stroke-linejoin="round">
+    <path d="M450 208
+             C 350 212 270 250 250 320
+             C 240 356 244 390 262 400
+             C 280 408 300 392 306 360
+             L 320 300
+             L 300 560
+             C 296 610 300 655 316 685
+             C 336 705 400 712 450 712
+             C 500 712 564 705 584 685
+             C 600 655 604 610 600 560
+             L 580 300
+             L 594 360
+             C 600 392 620 408 638 400
+             C 656 390 660 356 650 320
+             C 630 250 550 212 450 208 Z"/>
+  </g>
+
+  <!-- internal corset panel line (structure through looseness) -->
+  <path d="M356 540 C 356 590 380 618 450 618 C 520 618 544 590 544 540" fill="none" stroke="var(--amber)" stroke-width="3" opacity="0.8"/>
+  <path d="M370 470 C 370 520 400 545 450 545 C 500 545 530 520 530 470" fill="none" stroke="#000" stroke-width="1.5" stroke-dasharray="2 7" opacity="0.4"/>
+
+  <!-- fold shading -->
+  <path d="M330 340 C 320 420 322 500 336 560" stroke="#000" stroke-width="12" opacity="0.15" fill="none"/>
+  <path d="M570 340 C 580 420 578 500 564 560" stroke="#000" stroke-width="12" opacity="0.15" fill="none"/>
+  </g>
+</svg>
+<div class="top-tag">MAISON OF CONTRADICTION</div>
+<div class="top-tag2">PARADOX WARDROBE</div>
+<div class="cap">
+  <div class="no">LOOK 03 &nbsp;/&nbsp; 体技心</div>
+  <div class="name">体技心の一着</div>
+  <div class="nameen">Bound Slouch</div>
+</div>
+</div>
+
+<!-- ============ LOOK 04 ============ -->
+<div class="plate" id="look04">
+<svg viewBox="0 0 900 1500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg4" cx="50%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#241c1c"/>
+      <stop offset="55%" stop-color="#130f0e"/>
+      <stop offset="100%" stop-color="#080606"/>
+    </radialGradient>
+    <linearGradient id="dress4" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0c0a09"/>
+      <stop offset="16%" stop-color="#1c1815"/>
+      <stop offset="50%" stop-color="#242019"/>
+      <stop offset="84%" stop-color="#18140f"/>
+      <stop offset="100%" stop-color="#080605"/>
+    </linearGradient>
+    <linearGradient id="lining4" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7a1f16"/>
+      <stop offset="100%" stop-color="#4a0f0a"/>
+    </linearGradient>
+    <linearGradient id="skin1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e6dbc6"/>
+      <stop offset="100%" stop-color="#cfc2a8"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1500" fill="url(#bg4)"/>
+
+  <g transform="translate(50,10)">
+  <g fill="url(#skin1)">
+    <ellipse cx="450" cy="98" rx="50" ry="64"/>
+    <path d="M428 156 L 472 156 L 468 206 L 432 206 Z"/>
+    <ellipse cx="316" cy="520" rx="15" ry="26"/>
+    <ellipse cx="584" cy="520" rx="15" ry="26"/>
+  </g>
+
+  <!-- hidden crimson lining glimpse (behind dress, peeking at slit) -->
+  <path d="M400 900 C 392 1020 388 1160 392 1300 L 452 1300 C 456 1160 456 1020 448 900 Z" fill="url(#lining4)"/>
+
+  <!-- long dress -->
+  <g fill="url(#dress4)" stroke="#050403" stroke-width="1.5" stroke-linejoin="round">
+    <path d="M450 208
+             C 390 212 340 234 322 268
+             L 312 340
+             C 372 356 528 356 588 340
+             L 578 268
+             C 560 234 510 212 450 208 Z"/>
+    <path d="M312 340
+             C 280 420 260 520 250 640
+             C 232 800 224 980 232 1160
+             C 236 1250 246 1330 262 1390
+             L 638 1390
+             C 654 1330 664 1250 668 1160
+             C 676 980 668 800 650 640
+             C 640 520 620 420 588 340
+             C 528 356 372 356 312 340 Z"/>
+  </g>
+
+  <!-- slit revealing lining -->
+  <path d="M404 900 L 396 1300 L 430 1300 L 432 900 Z" fill="url(#lining4)" opacity="0.95"/>
+  <path d="M496 900 L 504 1300 L 470 1300 L 468 900 Z" fill="url(#lining4)" opacity="0.95"/>
+
+  <!-- seam lines -->
+  <g stroke="#000" stroke-width="1.2" opacity="0.35" fill="none">
+    <path d="M330 360 C 300 500 270 700 262 900 C 256 1080 258 1250 268 1385"/>
+    <path d="M570 360 C 600 500 630 700 638 900 C 644 1080 642 1250 632 1385"/>
+    <path d="M450 356 L 450 1385"/>
+  </g>
+
+  <!-- soft sheen highlight -->
+  <path d="M370 380 C 350 560 336 760 332 960" stroke="#fff" stroke-width="8" opacity="0.05" fill="none"/>
+  <path d="M540 380 C 556 560 566 760 568 960" stroke="#fff" stroke-width="8" opacity="0.05" fill="none"/>
+  </g>
+</svg>
+<div class="top-tag">MAISON OF CONTRADICTION</div>
+<div class="top-tag2">PARADOX WARDROBE</div>
+<div class="cap">
+  <div class="no">LOOK 04 &nbsp;/&nbsp; 華麗な憂うつ</div>
+  <div class="name">華麗な憂うつのドレス</div>
+  <div class="nameen">Melancholic Bloom</div>
+</div>
+</div>
+
+</body></html>
